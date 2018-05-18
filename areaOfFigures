@@ -1,0 +1,26 @@
+import java.util.Scanner;
+import java.util.zip.DeflaterOutputStream;
+
+public class areaOfFigures {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String figure = input.nextLine();
+        double area = 0;
+        if ("square".equals(figure)){
+            double a = Double.parseDouble(input.nextLine());
+            area = a * a;
+        }else if ("rectangle".equals(figure)){
+            double a = Double.parseDouble(input.nextLine());
+            double b = Double.parseDouble(input.nextLine());
+            area = a * b;
+        }else if ("circle".equals(figure)){
+            double a = Double.parseDouble(input.nextLine());
+            area = Math.PI * a * a;
+        }else if ("triangle".equals(figure)){
+            double a = Double.parseDouble(input.nextLine());
+            double h = Double.parseDouble(input.nextLine());
+            area = (a * h)/2;
+        }
+        System.out.printf("%.3f", area);
+    }
+}
