@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class scholarship {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double profit = Double.parseDouble(input.nextLine());
+        double grade = Double.parseDouble(input.nextLine());
+        double minWage = Double.parseDouble(input.nextLine());
+        double socialScholarship = 0.35* minWage;
+        double excellentScholarship = grade*25;
+        if((profit > minWage && grade < 5.5)|| grade < 4.5){
+            System.out.println("You cannot get a scholarship!");
+        }else if((minWage > profit && grade > 4.5 && socialScholarship > excellentScholarship)){
+            System.out.printf("You get a Social scholarship %.0f BGN",socialScholarship);
+        }else if ((grade >= 5.5 && excellentScholarship >= socialScholarship) || grade >= 5.5){
+            System.out.printf("You get a scholarship for excellent results %.0f BGN",Math.floor(excellentScholarship));
+        }else if(minWage > profit && grade > 4.5){
+            System.out.printf("You get a Social scholarship %.0f BGN",socialScholarship);
+        }
+    }
+}
