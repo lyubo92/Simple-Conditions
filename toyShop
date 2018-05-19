@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class toyShop {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double travelPrice = Double.parseDouble(input.nextLine());
+        int puzzles = Integer.parseInt(input.nextLine());
+        int speakingDoll = Integer.parseInt(input.nextLine());
+        int teddyBear = Integer.parseInt(input.nextLine());
+        int minion = Integer.parseInt(input.nextLine());
+        int truck = Integer.parseInt(input.nextLine());
+        int allToys = puzzles + speakingDoll + teddyBear + minion + truck;
+        double sum = puzzles*2.6 + speakingDoll*3 + teddyBear*4.1 + minion*8.2 + truck*2;
+        if (allToys >= 50){
+            sum = sum - 0.25*sum;
+        }
+        double rent = 0.1*sum;
+        double profit = sum - rent;
+        if (profit >= travelPrice){
+            double rest = profit - travelPrice;
+            System.out.printf("Yes! %.2f lv left.",rest);
+        }else{
+            double rest = travelPrice - profit;
+            System.out.printf("Not enough money! %.2f lv needed.",rest);
+        }
+    }
+}
