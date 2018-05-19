@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class worldRecord {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double record = Double.parseDouble(input.nextLine());
+        double distance = Double.parseDouble(input.nextLine());
+        double speed = Double.parseDouble(input.nextLine());
+        double ivanTIme = distance * speed;
+        double slowly = Math.floor(distance / 15) * 12.5;
+        double totalTime = ivanTIme + slowly;
+        if(totalTime < record){
+            System.out.printf("Yes, he succeeded! The new world record is %.2f seconds.", totalTime);
+        }else{
+
+            double difference = Math.abs(record - totalTime);
+            System.out.printf("No, he failed! He was %.2f seconds slower.",difference);
+        }
+    }
+}
