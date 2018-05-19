@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class threeBrothers {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double brother1 = Double.parseDouble(input.nextLine());
+        double brother2 = Double.parseDouble(input.nextLine());
+        double brother3 = Double.parseDouble(input.nextLine());
+        double father = Double.parseDouble(input.nextLine());
+        double brothers = 1/(1/brother1 + 1/brother2 + 1/brother3);
+        double totalTime = brothers + 0.15*brothers;
+        double restTIme = father - totalTime;
+        System.out.printf("Cleaning time: %.2f%n",totalTime);
+        if(restTIme > 0){
+            restTIme = Math.floor(restTIme);
+            System.out.printf("Yes, there is a surprise - time left -> %.0f hours.",restTIme);
+        }else{
+            restTIme = Math.ceil(Math.abs(restTIme));
+            System.out.printf("No, there isn't a surprise - shortage of time -> %.0f hours.",restTIme);
+        }
+    }
+}
