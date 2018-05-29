@@ -1,0 +1,75 @@
+import java.util.Scanner;
+
+public class Tens {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int number = Integer.parseInt(input.nextLine());
+
+        if (number < 0 || number > 100){
+            System.out.println("invalid number");
+        } else if (number == 0){
+            System.out.println("zero");
+        } else if (number == 100){
+            System.out.println("one hundred");
+        } else {
+
+            if (number >= 11 && number <= 19){
+                switch (number){
+
+                    case 11: System.out.println("eleven"); break;
+                    case 12: System.out.println("twelve"); break;
+                    case 13: System.out.println("thirteen"); break;
+                    case 14: System.out.println("fourteen"); break;
+                    case 15: System.out.println("fifteen"); break;
+                    case 16: System.out.println("sixteen"); break;
+                    case 17: System.out.println("seventeen"); break;
+                    case 18: System.out.println("eighteen"); break;
+                    case 19: System.out.println("nineteen"); break;
+                }
+            } else {
+
+                int tens = number / 10;
+                int ones = number % 10;
+                String tenz = "";
+                String onez = "";
+
+                switch (tens){
+
+                    case 1: tenz = "ten"; break;
+                    case 2: tenz = "twenty"; break;
+                    case 3: tenz = "thirty"; break;
+                    case 4: tenz = "forty"; break;
+                    case 5: tenz = "fifty"; break;
+                    case 6: tenz = "sixty"; break;
+                    case 7: tenz = "seventy"; break;
+                    case 8: tenz = "eighty"; break;
+                    case 9: tenz = "ninety"; break;
+                }
+
+                switch (ones){
+
+                    case 1: onez = "one"; break;
+                    case 2: onez = "two"; break;
+                    case 3: onez = "three"; break;
+                    case 4: onez = "four"; break;
+                    case 5: onez = "five"; break;
+                    case 6: onez = "six"; break;
+                    case 7: onez = "seven"; break;
+                    case 8: onez = "eight"; break;
+                    case 9: onez = "nine"; break;
+                }
+
+                if  (number % 10 == 0){
+                    System.out.println(tenz);
+                } else {
+                    if (number < 10){
+                        System.out.println(onez);
+                    } else {
+                        System.out.printf("%s %s%n", tenz, onez);
+                    }
+                }
+            }
+        }
+    }
+}
